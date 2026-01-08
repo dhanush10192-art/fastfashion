@@ -5,12 +5,36 @@ import { ArrowRight } from "lucide-react";
 const GalleryPreview = () => {
   // Show first 6 images as preview
   const previewImages = [
-    { id: 1, url: "https://picsum.photos/400/300?random=1", title: "1" },
-    { id: 2, url: "https://picsum.photos/400/300?random=2", title: "2" },
-    { id: 3, url: "https://picsum.photos/400/300?random=3", title: "3" },
-    { id: 4, url: "https://picsum.photos/400/300?random=4", title: "4" },
-    { id: 5, url: "https://picsum.photos/400/300?random=5", title: "5" },
-    { id: 6, url: "https://picsum.photos/400/300?random=6", title: "6" },
+    { 
+      id: 1, 
+      url: "/gallery-image1.png", 
+      title: "Custom T-Shirt Design" 
+    },
+    { 
+      id: 2, 
+      url: "/gallery-image2.jpg", 
+      title: "Hoodie Print Sample" 
+    },
+    { 
+      id: 3, 
+      url: "/gallery-image3.jpg", 
+      title: "Direct to Film Print" 
+    },
+    { 
+      id: 4, 
+      url: "/gallery-image4.jpg", 
+      title: "Fashion Apparel" 
+    },
+    { 
+      id: 5, 
+      url: "/gallery-image5.jpg", 
+      title: "Custom Design Work" 
+    },
+    { 
+      id: 6, 
+      url: "/gallery-image6.jpg", 
+      title: "Print Quality Sample" 
+    },
   ];
 
   return (
@@ -28,7 +52,7 @@ const GalleryPreview = () => {
             <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <img
                 src={image.url}
-                alt={`Gallery Image ${image.title}`}
+                alt={image.title}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 onError={(e) => {
@@ -37,7 +61,7 @@ const GalleryPreview = () => {
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                <h3 className="text-white text-sm font-medium">Image {image.title}</h3>
+                <h3 className="text-white text-sm font-medium">{image.title}</h3>
               </div>
             </div>
           ))}

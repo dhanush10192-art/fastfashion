@@ -4,6 +4,9 @@ import Hero from "@/components/Hero";
 import ImageCarousel from "@/components/ImageCarousel";
 import VideoReels from "@/components/VideoReels";
 import GalleryPreview from "@/components/GalleryPreview";
+import Services from "@/components/Services";
+import Infrastructure from "@/components/Infrastructure";
+import About from "@/components/About";
 import Pricing from "@/components/Pricing";
 import OrderForm from "@/components/OrderForm";
 import CustomerReviews from "@/components/CustomerReviews";
@@ -27,6 +30,9 @@ const Index = () => {
         <ImageCarousel />
         <VideoReels />
         <GalleryPreview />
+        <Services />
+        <Infrastructure />
+        <About />
         <Pricing />
         <OrderForm />
         <CustomerReviews />

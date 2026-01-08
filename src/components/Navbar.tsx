@@ -19,8 +19,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
+          ? "bg-white backdrop-blur-md shadow-soft py-3"
+          : "bg-white py-5"
       }`}
     >
       <div className="container px-4">
@@ -28,9 +28,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="/FC-1.avif"
+              src="/FC.svg"
               alt="Fastcolorfashion Logo"
-              className="w-10 h-10"
+              className="w-90 h-10"
             />
             <span className="font-display font-bold text-xl"></span>
           </Link>
@@ -38,10 +38,10 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              to="/gallery"
+              to="/"
               className="text-sm font-medium hover:text-accent transition-colors"
             >
-              Gallery
+              Home
             </Link>
             <Link
               to="/services"
@@ -50,10 +50,28 @@ const Navbar = () => {
               Services
             </Link>
             <Link
+              to="/gallery"
+              className="text-sm font-medium hover:text-accent transition-colors"
+            >
+              Gallery
+            </Link>
+            <Link
               to="/blogs"
               className="text-sm font-medium hover:text-accent transition-colors"
             >
               Blog
+            </Link>
+            <Link
+              to="/#infrastructure"
+              className="text-sm font-medium hover:text-accent transition-colors"
+            >
+              Infrastructure
+            </Link>
+            <Link
+              to="/#about"
+              className="text-sm font-medium hover:text-accent transition-colors"
+            >
+              About
             </Link>
             <Link
               to="/#pricing"
@@ -65,7 +83,6 @@ const Navbar = () => {
               to="/#order-form"
               className="text-sm font-medium hover:text-accent transition-colors"
             >
-              Order
             </Link>
             <Button
               asChild
@@ -86,14 +103,14 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
+          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-white">
             <div className="flex flex-col gap-4">
               <Link
-                to="/gallery"
+                to="/"
                 className="text-left py-2 font-medium hover:text-accent transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Gallery
+                Home
               </Link>
               <Link
                 to="/services"
@@ -103,11 +120,32 @@ const Navbar = () => {
                 Services
               </Link>
               <Link
+                to="/gallery"
+                className="text-left py-2 font-medium hover:text-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
                 to="/blogs"
                 className="text-left py-2 font-medium hover:text-accent transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
+              </Link>
+              <Link
+                to="/#infrastructure"
+                className="text-left py-2 font-medium hover:text-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Infrastructure
+              </Link>
+              <Link
+                to="/#about"
+                className="text-left py-2 font-medium hover:text-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
               </Link>
               <Link
                 to="/#pricing"

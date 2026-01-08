@@ -50,7 +50,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="px-8 py-6 text-lg rounded-full border-white text-white hover:bg-white hover:text-black transition-colors"
+              className="px-8 py-6 text-lg rounded-full border-white text-black hover:bg-white hover:text-black transition-colors"
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
             >
               View Pricing

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Printer, Shirt, Package, Palette } from 'lucide-react';
 
 const Services = () => {
   const services = [
@@ -7,21 +8,25 @@ const Services = () => {
       title: 'Direct to Film Printing',
       description: 'High-quality DTF printing for vibrant, durable designs on various fabrics.',
       price: 'Starting at ₹200',
+      icon: Printer,
     },
     {
       title: 'Custom Apparel Printing',
       description: 'Personalized printing on t-shirts, hoodies, and more with your designs.',
       price: 'Custom pricing',
+      icon: Shirt,
     },
     {
       title: 'Bulk Orders',
       description: 'Discounted rates for large quantity orders. Perfect for businesses and events.',
       price: 'Contact for quote',
+      icon: Package,
     },
     {
       title: 'Design Consultation',
       description: 'Expert advice on design optimization for best printing results.',
       price: 'Free initial consultation',
+      icon: Palette,
     },
   ];
 
@@ -38,7 +43,10 @@ const Services = () => {
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
+                <div className="flex items-center gap-3 mb-2">
+                  <service.icon className="w-8 h-8 text-primary" />
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
                 <CardDescription className="mb-4">{service.description}</CardDescription>
