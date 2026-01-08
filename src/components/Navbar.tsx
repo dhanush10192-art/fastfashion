@@ -44,6 +44,18 @@ const Navbar = () => {
               Gallery
             </Link>
             <Link
+              to="/services"
+              className="text-sm font-medium hover:text-accent transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              to="/blogs"
+              className="text-sm font-medium hover:text-accent transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
               to="/#pricing"
               className="text-sm font-medium hover:text-accent transition-colors"
             >
@@ -82,6 +94,20 @@ const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Gallery
+              </Link>
+              <Link
+                to="/services"
+                className="text-left py-2 font-medium hover:text-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link
+                to="/blogs"
+                className="text-left py-2 font-medium hover:text-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
               <Link
                 to="/#pricing"

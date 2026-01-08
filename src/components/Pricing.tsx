@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 const pricingTiers = [
   {
     name: "Small",
-    size: 'Up to 4"×4"',
-    price: 200,
-    unit: "per transfer",
+    size: 'Up to 5 meters',
+    price: 260,
+    unit: "per meter",
     features: [
       "Full color printing",
       "Soft hand feel",
@@ -17,9 +17,9 @@ const pricingTiers = [
   },
   {
     name: "Medium",
-    size: 'Up to 8"×10"',
-    price: 350,
-    unit: "per transfer",
+    size: 'Above 5 meters',
+    price: 180,
+    unit: "per meter",
     features: [
       "Full color printing",
       "Soft hand feel",
@@ -31,7 +31,7 @@ const pricingTiers = [
   },
   {
     name: "Large",
-    size: 'Up to 14"×18"',
+    size: 'Above 20 meters',
     price: null,
     unit: "XXX",
     features: [

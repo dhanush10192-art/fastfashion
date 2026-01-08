@@ -4,9 +4,9 @@ import Hero from "@/components/Hero";
 import ImageCarousel from "@/components/ImageCarousel";
 import VideoReels from "@/components/VideoReels";
 import GalleryPreview from "@/components/GalleryPreview";
-import CustomerReviews from "@/components/CustomerReviews";
 import Pricing from "@/components/Pricing";
 import OrderForm from "@/components/OrderForm";
+import CustomerReviews from "@/components/CustomerReviews";
 import Footer from "@/components/Footer";
 
 const Index = () => {

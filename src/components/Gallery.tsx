@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 const imagesPerPage = 12;
 const totalImages = 350;
 
-// Generate 350 t-shirt backprint images using LoremFlickr's fashion category
+// Generate 350 t-shirt images using LoremFlickr's t-shirt category
 const images = Array.from({ length: totalImages }, (_, i) => ({
   id: i + 1,
-  url: `https://loremflickr.com/400/300/fashion?random=${i + 1}`,
+  url: `https://loremflickr.com/400/300/t-shirt?random=${i + 1}`,
   title: `${i + 1}`,
 }));
 
@@ -50,7 +50,7 @@ const Gallery = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Gallery</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-white/90">
-            Explore our collection of 350 stunning t-shirt back prints
+            Explore our collection of 350 stunning t-shirt designs
           </p>
         </div>
 
@@ -125,7 +125,7 @@ const Gallery = () => {
         </div>
 
         <div className="text-center mt-4 text-sm text-white/80">
-          Page {currentPage} of {totalPages} ({totalImages} t-shirt back prints)
+          Page {currentPage} of {totalPages} ({totalImages} t-shirt designs)
         </div>
       </div>
     </section>
