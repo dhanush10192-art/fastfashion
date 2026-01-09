@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="/FC.svg"
+              src="/FCmain.png"
               alt="Fastcolorfashion Logo"
               className="w-90 h-10"
             />
