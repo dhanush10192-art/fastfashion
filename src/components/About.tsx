@@ -28,10 +28,10 @@ const About = () => {
 
   return (
     <section id="about" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">About FastColor Fashion</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+          <h2 className="text-fluid-h2 font-bold text-gray-900 mb-4">About FastColor Fashion</h2>
+          <p className="text-fluid-p text-gray-600 max-w-3xl mx-auto mb-8">
             We are a premier custom printing company specializing in Direct-to-Film (DTF) technology.
             With years of experience and a passion for quality, we transform ideas into stunning,
             durable prints that make a lasting impression.
@@ -55,7 +55,7 @@ const About = () => {
         </div>
 
         <div className="bg-gray-50 rounded-lg p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
+          <h3 className="text-fluid-h3 font-bold text-gray-900 mb-4">Why Choose Us?</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">Expertise</h4>

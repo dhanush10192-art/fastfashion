@@ -98,7 +98,7 @@ const BlogDetail = () => {
         </Helmet>
         <main className="min-h-screen">
           <Navbar />
-          <div className="container mx-auto px-4 py-16 text-center">
+          <div className="container mx-auto py-16 text-center">
             <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
             <p className="text-lg mb-8">The blog post you're looking for doesn't exist.</p>
             <Button asChild>

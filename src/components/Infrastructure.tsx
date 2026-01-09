@@ -32,10 +32,10 @@ const Infrastructure = () => {
 
   return (
     <section id="infrastructure" className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Infrastructure</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-fluid-h2 font-bold text-gray-900 mb-4">Our Infrastructure</h2>
+          <p className="text-fluid-p text-gray-600 max-w-2xl mx-auto">
             Discover the cutting-edge technology and facilities that power our printing operations.
           </p>
         </div>

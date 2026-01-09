@@ -179,12 +179,12 @@ const OrderForm = () => {
   }
 
   return (
-    <section id="order-form" className="py-20 bg-background">
-      <div className="container px-4">
+    <section id="order-form" className="py-20 bg-background relative overflow-hidden">
+      <div className="container relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Place Your Order</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Upload your design and we'll get started on your custom DTF prints
+          <h2 className="text-fluid-h2 font-bold mb-4">Start Your Order</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-fluid-p">
+            Fill out the form below to get started. We'll review your design and get back to you with a quote.
           </p>
         </div>
 

@@ -53,20 +53,20 @@ const CustomerReviews = () => {
 
   return (
     <section className="py-20 bg-background">
-      <div className="container px-4">
+      <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-fluid-h2 font-bold mb-4">What Our Customers Say</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-fluid-p">
             Join hundreds of satisfied customers who trust us with their prints
           </p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="relative min-h-[280px]">
+        <div className="relative max-w-3xl mx-auto overflow-hidden">
+          <div className="relative min-h-[400px]">
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-all duration-500 ${
+                className={`absolute inset-0 transition-all duration-500 p-6 ${
                   index === currentIndex
                     ? "opacity-100 translate-x-0"
                     : index < currentIndex
@@ -74,7 +74,7 @@ const CustomerReviews = () => {
                     : "opacity-0 translate-x-full"
                 }`}
               >
-                <div className="bg-card border border-border rounded-2xl p-8 shadow-soft">
+                <div className="bg-card border border-border rounded-2xl p-8 shadow-soft h-full flex flex-col justify-center">
                   <Quote className="w-10 h-10 text-accent/30 mb-4" />
                   
                   <div className="flex gap-1 mb-4">

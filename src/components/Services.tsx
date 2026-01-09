@@ -32,25 +32,27 @@ const Services = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-fluid-h2 font-bold text-gray-900 mb-4">Our Services</h2>
+          <p className="text-fluid-p text-gray-600 max-w-2xl mx-auto">
             We offer a range of professional printing services to bring your creative visions to life.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-none bg-white/50 backdrop-blur-sm hover:bg-white hover:-translate-y-2">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <service.icon className="w-8 h-8 text-primary" />
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="p-3 rounded-xl bg-accent/10 group-hover:bg-accent transition-colors duration-300">
+                    <service.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-accent transition-colors">{service.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-4">{service.description}</CardDescription>
-                <p className="text-lg font-semibold text-primary">{service.price}</p>
+                <CardDescription className="mb-6 text-base leading-relaxed">{service.description}</CardDescription>
+                <p className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">{service.price}</p>
               </CardContent>
             </Card>
           ))}

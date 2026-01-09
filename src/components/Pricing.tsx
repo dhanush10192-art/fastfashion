@@ -77,10 +77,10 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="py-20 bg-secondary/30">
-      <div className="container px-4">
+      <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple Pricing</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-fluid-h2 font-bold mb-4">Simple Pricing</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-fluid-p">
             Transparent pricing based on design size. Bulk discounts available!
           </p>
         </div>

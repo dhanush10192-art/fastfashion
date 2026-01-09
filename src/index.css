@@ -87,6 +87,27 @@
 }
 
 @layer utilities {
+  /* Fluid typography: clamp(min, val, max) */
+  .text-fluid-h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    line-height: 1.1;
+  }
+  
+  .text-fluid-h2 {
+    font-size: clamp(1.875rem, 3vw + 1rem, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .text-fluid-h3 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+    line-height: 1.2;
+  }
+  
+  .text-fluid-p {
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.25rem);
+    line-height: 1.6;
+  }
+
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
