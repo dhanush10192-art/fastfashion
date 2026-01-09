@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,37 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Close menu on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        const navbar = document.querySelector("nav");
+        if (navbar && !navbar.contains(e.target as Node)) {
+          setIsMobileMenuOpen(false);
+        }
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isMobileMenuOpen]);
+
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <nav
@@ -94,7 +126,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 relative z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -103,70 +135,72 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-white">
-            <div className="flex flex-col gap-4">
-              <Link
-                to="/"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                to="/services"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                to="/gallery"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Gallery
-              </Link>
-              <Link
-                to="/blogs"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                to="/#infrastructure"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Infrastructure
-              </Link>
-              <Link
-                to="/#about"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                to="/#pricing"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                to="/#order-form"
-                className="text-left py-2 font-medium hover:text-accent transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Order
-              </Link>
-              <Button
-                asChild
-                className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-full"
-              >
-                <Link to="/#order-form" onClick={() => setIsMobileMenuOpen(false)}>Place Order</Link>
-              </Button>
+          <div 
+            ref={menuRef}
+            className="md:hidden fixed inset-0 top-[60px] bg-white/98 backdrop-blur-md z-40 animate-in fade-in duration-200"
+          >
+            <div className="container px-4 py-6 max-h-[calc(100vh-60px)] overflow-y-auto">
+              <div className="flex flex-col gap-4">
+                <Link
+                  to="/"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/services"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  Services
+                </Link>
+                <Link
+                  to="/gallery"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  Gallery
+                </Link>
+                <Link
+                  to="/blogs"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  Blog
+                </Link>
+                <Link
+                  to="/#infrastructure"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  Infrastructure
+                </Link>
+                <Link
+                  to="/#about"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/#pricing"
+                  className="px-4 py-3 text-base font-medium hover:text-accent hover:bg-accent/10 transition-all rounded-lg active:bg-accent/20"
+                  onClick={closeMenu}
+                >
+                  Pricing
+                </Link>
+                <div className="pt-4 pb-2">
+                  <Button
+                    asChild
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-full text-base py-6 font-semibold"
+                  >
+                    <Link to="/#order-form" onClick={closeMenu}>
+                      Place Order
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         )}
