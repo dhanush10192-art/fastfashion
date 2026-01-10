@@ -3,14 +3,31 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const imagesPerPage = 12;
-const totalImages = 350;
 
-// Generate 350 t-shirt images using LoremFlickr's t-shirt category
-const images = Array.from({ length: totalImages }, (_, i) => ({
-  id: i + 1,
-  url: `https://loremflickr.com/400/300/t-shirt?random=${i + 1}`,
-  title: `${i + 1}`,
-}));
+// List of actual gallery images from public folder
+const images = [
+  { id: 1, url: '/gallery-image1.png', title: 'Gallery Image 1' },
+  { id: 2, url: '/gallery-image2.jpg', title: 'Gallery Image 2' },
+  { id: 3, url: '/gallery-image4.jpg', title: 'Gallery Image 4' },
+  { id: 4, url: '/gallery-image6.png', title: 'Gallery Image 6' },
+  { id: 5, url: '/gallery-image8.png', title: 'Gallery Image 8' },
+  { id: 6, url: '/gallery-image9.png', title: 'Gallery Image 9' },
+  { id: 7, url: '/gallery-image10.png', title: 'Gallery Image 10' },
+  { id: 8, url: '/gallery-image12.png', title: 'Gallery Image 12' },
+  { id: 9, url: '/gallery-image13.png', title: 'Gallery Image 13' },
+  { id: 10, url: '/gallery-image14.png', title: 'Gallery Image 14' },
+  { id: 11, url: '/gallery-image15.png', title: 'Gallery Image 15' },
+  { id: 12, url: '/gallery-image16.png', title: 'Gallery Image 16' },
+  { id: 13, url: '/gallery-image17.png', title: 'Gallery Image 17' },
+  { id: 14, url: '/gallery-image18.png', title: 'Gallery Image 18' },
+  { id: 15, url: '/gallery-image19.png', title: 'Gallery Image 19' },
+  { id: 16, url: '/gallery-image20.png', title: 'Gallery Image 20' },
+  { id: 17, url: '/gallery-image21.png', title: 'Gallery Image 21' },
+  { id: 18, url: '/gallery-image22.png', title: 'Gallery Image 22' },
+  { id: 19, url: '/gallery-image23.png', title: 'Gallery Image 23' },
+];
+
+const totalImages = images.length;
 
 const Gallery = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +67,7 @@ const Gallery = () => {
         <div className="text-center mb-12">
           <h2 className="text-fluid-h2 font-bold mb-4 text-white">Gallery</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-white/90 text-fluid-p">
-            Explore our collection of 350 stunning t-shirt designs
+            Explore our collection of stunning gallery images
           </p>
         </div>
 
@@ -126,7 +143,7 @@ const Gallery = () => {
         </div>
 
         <div className="text-center mt-4 text-sm text-white/80">
-          Page {currentPage} of {totalPages} ({totalImages} t-shirt designs)
+          Page {currentPage} of {totalPages} ({totalImages} gallery images)
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ const GalleryPreview = () => {
     },
     { 
       id: 3, 
-      url: "/gallery-image3.jpg", 
+      url: "/gallery-image10.png", 
       title: "Direct to Film Print" 
     },
     { 
@@ -27,12 +27,12 @@ const GalleryPreview = () => {
     },
     { 
       id: 5, 
-      url: "/gallery-image5.jpg", 
+      url: "/gallery-image2.jpg", 
       title: "Custom Design Work" 
     },
     { 
       id: 6, 
-      url: "/gallery-image6.jpg", 
+      url: "/gallery-image6.png", 
       title: "Print Quality Sample" 
     },
   ];
