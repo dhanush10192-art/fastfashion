@@ -34,7 +34,7 @@ const Services = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-fluid-h2 font-bold text-gray-900 mb-4">Our Services</h2>
+          <h2 className="text-fluid-h2 font-bold text-gray-900 mt-4 mb-4">Our Services</h2>
           <p className="text-fluid-p text-gray-600 max-w-2xl mx-auto">
             We offer a range of professional printing services to bring your creative visions to life.
           </p>
